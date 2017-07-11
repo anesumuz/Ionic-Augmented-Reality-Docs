@@ -2,6 +2,15 @@
 Documentation for Ionic Augmented Reality Starter App
 
 Thanks for purchasing Ionic Augmented Reality Starter App. Now that you have the project, lets get you set up!
+# Screenshots
+<a href="#"><img src="https://image.ibb.co/dAsBaF/localhost_8100_i_Phone_6_6.png" height="400"></a>
+<a href="#"><img src="https://image.ibb.co/jmHNhv/localhost_8100_i_Phone_6_5.png" height="400"></a>
+<a href="#"><img src="https://preview.ibb.co/dqvxFF/Screenshot_2017_07_06_16_23_18.png" height="400"></a>
+<br>
+<br>
+<a href="#"><img src="https://image.ibb.co/n1j2hv/localhost_8100_i_Phone_6_4.png" height="400"></a>
+<a href="#"><img src="https://preview.ibb.co/mdHoNv/Screenshot_2017_07_11_22_48_59.png" height="400"></a>
+<a href="#"><img src="https://preview.ibb.co/ivhzUa/Screenshot_2017_07_11_22_49_10.png" height="400"></a>
 
 ## Installation
 
