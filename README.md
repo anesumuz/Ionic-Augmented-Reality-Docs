@@ -95,6 +95,13 @@ The app is based on the default Ionic 2 and 3 directory structure. The app utili
 
 You will find the apps source under `augmented-ionic/src` directory. In this directory is where all your edits or modifications will go.
 
+- `src/app` is the main component of the app
+- `src/assets/` contains the app images in `img/`, 3D models in `models/`, the `fonts/`, javascript `js/` folders
+- `src/pages` contains the page components
+- `src/providers` contains the apps `services` modules
+- `src/theme` contains theme styles aside form each page components' owbn `.scss` stylesheet
+- `src/utils` contains `mock.ts` whic is a configuration file for 3D projections that user will see
+
 ## Dependencies
 
 The only major dependency for this application is `awe.js` (Note, `awe.js` itself does have some of its own dependencies like `Three.js` bit these come bndled with the library). `awe.js` is a javascript library that enables augmented reality experiences in web browsers. As this is a core dependency of the app, you should go through the documentation of the library <a href="https://github.com/awe-media/awe.js/"> here</a>, so as to most successfully make use of this starter app. We will however do a short walkthrough of the core concepts of the library in the `Typescript` section below. 
