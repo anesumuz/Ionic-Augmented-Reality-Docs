@@ -84,8 +84,43 @@ Below I have simply opened the developer tools in Google Chrome by pressing F12 
 
 The app is based on the default Ionic 2 and 3 directory structure. The app utilizes only one page component.
 
-You will find the apps source under `augmented-ionic/src` directory. In this directory i where all your edits or modifications will go.
+You will find the apps source under `augmented-ionic/src` directory. In this directory is where all your edits or modifications will go.
 
+## Dependencies
+
+The only major dependency for this application is `awe.js` (Note, `awe.js` itself does have some of its own dependencies like `Three.js` bit these come bndled with the library). `awe.js` is a javascript library that enables augmented reality experiences in web browsers. As this is a core dependency of the app, you should go through the documentation of the library here, so as to most successfully make use of this starter app. We will however do a short walkthrough of the core concepts of the library in the `Typescript` section below. 
+
+## Typescript
+
+The app uses `typescript` as is the de facto with `Ionic 2+` apps. We'll wallk through a few of the mail typescript file where most of the magic happens, this is `augmented-ionic/src/pages/providers/ar.ts`
+
+This file manages importing `awe.js` and serving up the augmented projections.The method below on the `AR` class specifically does this. 
+		
+		
+	loadAR() {
+	// Add Augmented Reality Projections To Scene
+	    awe.pois.add(configs.poi);
+	    awe.projections.add(configs.projections, { poi_id: configs.poi.id });
+	    // animate the fixed projection if updates configured
+	    awe.projections.update(configs.updates);
+	}
+
+Augmented projections in `awe.js` are created in 3 main steps
+- Add a Point of interest at a particular location on the cartesian plane of the view .i.e the x,y and z coordinates with
+				
+		awe.pois.add(<poi configs here>)
+		
+- Add the projection .i.e the `Three.js` or `.obj` format 3D object. The object can have textures and materials as supported by `Three.js`. Projections are added to a predefined POI as specified by thesecond parameter below.
+
+		awe.projections.add(<object with projection params>, <object soecifying which POI to add projection>);
+		
+- Optional update values, these include any animations you wish to add to the projection , e.g tweening, rotation etc.
+
+		awe.projections.update(configs.updates);
+		
+Thee parameters to the `loadAR()` method of the `AR` class are paseed to it from the users selection. These parameters are found in `augmented-ionic/src/utils/mocks.ts` . These are locally defined parameters that define the POIs,Projections and relevent updates.
+
+The actual handler functions for the parmeters are available to the app user through a page component under `augmented-ionic/srs/pages/home/home.ts` . The handlers are callbacks under Ionic's `ActionSheet` component by which the user selects which projection to show on click.
 
 
 
