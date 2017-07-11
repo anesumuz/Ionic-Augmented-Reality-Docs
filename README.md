@@ -88,7 +88,7 @@ You will find the apps source under `augmented-ionic/src` directory. In this dir
 
 ## Dependencies
 
-The only major dependency for this application is `awe.js` (Note, `awe.js` itself does have some of its own dependencies like `Three.js` bit these come bndled with the library). `awe.js` is a javascript library that enables augmented reality experiences in web browsers. As this is a core dependency of the app, you should go through the documentation of the library here, so as to most successfully make use of this starter app. We will however do a short walkthrough of the core concepts of the library in the `Typescript` section below. 
+The only major dependency for this application is `awe.js` (Note, `awe.js` itself does have some of its own dependencies like `Three.js` bit these come bndled with the library). `awe.js` is a javascript library that enables augmented reality experiences in web browsers. As this is a core dependency of the app, you should go through the documentation of the library <a href="https://github.com/awe-media/awe.js/"> here</a>, so as to most successfully make use of this starter app. We will however do a short walkthrough of the core concepts of the library in the `Typescript` section below. 
 
 ## Typescript
 
@@ -122,5 +122,52 @@ Thee parameters to the `loadAR()` method of the `AR` class are paseed to it from
 
 The actual handler functions for the parmeters are available to the app user through a page component under `augmented-ionic/srs/pages/home/home.ts` . The handlers are callbacks under Ionic's `ActionSheet` component by which the user selects which projection to show on click.
 
+## SCSS
+
+The styling is very minimalistic as the aim was to reserve the majority of screen space to view projections without hinderance. The app is first of all overriden to use the `Material Design` specification across devices. This was so we could have access to the flatter desigm `md` `ActionSheet` in Ionic.
+
+	...
+	imports: [
+	BrowserModule,
+	IonicModule.forRoot(MyApp, {mode:"md"})
+	],
+	...
+Making the header transparent and setting the title to the center of the header is achieved int the apps `theme/variables/scss` file.
+
+	$toolbar-background:transparent;
+	$toolbar-md-title-text-align:center;
+	
+The app uses a custom font, the ever beautiful `Varela Round` as imported and appllied in `app/app.scss` .
+
+	@font-face {
+	    font-family: 'varela_round';
+	    src: url('../assets/fonts/VarelaRound-Regular-webfont.eot');
+	    src: url('../assets/fonts/VarelaRound-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../assets/fonts/VarelaRound-Regular-webfont.woff') format('woff'),
+		 url('../assets/fonts/VarelaRound-Regular-webfont.ttf') format('truetype'),
+		 url('../assets/fonts/VarelaRound-Regular-webfont.svg#varela_roundregular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+
+	}
+	.app-root {
+	  font-family: 'varela_round' !important;
+	}
+	
+##Augmented Reality Marker for testing
+
+ The app's marker baser AR example uses `jsartoolkit` marker number `64` .Binding a POI to a jsartoolkit marker is easy;
+ 
+- First add the awe-jsartoolkit-dependencies.js plugin (see above)
+- Then select a marker image you'd like to use
+- Then add the matching number as a suffix for your POI id (e.g. _64)
+
+
+NOTE: See 64.png in this project's `assets/img` directory or https://github.com/kig/JSARToolKit/blob/master/demos/markers
+This automatically binds your POI to that marker id - easy!	
+
+#Th end!
+
+Once again, thanks for purchasing Ionic Augmented Reality Starter app, enjoy and dont forget to rate us!
 
 
