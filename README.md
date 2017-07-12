@@ -44,13 +44,17 @@ succesfully installe by running. It should return a version as below,(may show h
     $ ionic -v
     > 2.2.1
     
-### Step 3 : Run The App!!
+### Step 3 : Install Dependencies and Run The App!!
 
 Now we run the application. In your terminal, navigate to the root of the `augmented-ionic/` folder
 			
     $ cd <path to the folder here>/augmented-ionic/
     
 Once in the root folder, run the command;
+
+    $ npm install 
+    
+This command installs the projects dependencies. This make take a few minutes. Once this is done, run the command
 
     $ ionic serve
     
